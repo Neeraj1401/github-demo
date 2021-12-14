@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact</title>
+	<style type="text/css">
+		table{
+		  border: 3px solid black;
+		  align-content: center;
+		  padding: 2px;
+		}
+		th{
+		  border: 2px solid black;
+		  align-content: center;
+		  background-color: #dddddd;
+		}
+		tr, td{
+		  border: 2px solid black;
+		  align-content: center;
+		  text-align: center;
+		  padding: 1px;
+		}
+		body{
+			margin: auto;
+			max-width: 500px;
+		}
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body id = "body">
+	<h1 style="text-align:center" >Registration Form</h1>
+	<br>
+<fieldset>
+	<form id="test">
+		<label>Name: </label>
+		<input id="TName" type="text" name="Name">
+
+		<br><br>
+
+		<label>Gender: </label>
+		<input type="radio" name="gender" value="Male"> <label>Male</label> 
+		<input type="radio" name="gender" value="Female"> <label>Female</label> 
+		<input type="radio" name="gender" value="Others"> <label>Others</label> 
+
+		<br><br>
+
+		<label>Track:</label>
+		<select name="Track" >
+		  <option value="SDET JAVA">SDET JAVA</option>
+		  <option value="SDET DIGITAL">SDET DIGITAL</option>
+		  <option value="DOTNET">DOTNET</option>
+		  <option value="JAVA">JAVA</option>
+		</select>
+
+		<br><br>
+
+		<button type="button" onclick=addRow() >Add</button>
+
+		<input type="reset" name="Reset">
+		
+
+	</form>
+</fieldset>
+	<br>
+	
+    <h1>Track Allocation Details</h1>
+	<fieldset>
+    <table id="Ttable">
+	  <tr>
+	    <th>Name</th>
+	    <th>Gender</th>
+	    <th>Track</th>
+	  </tr>
+	</table>
+
+
+	<script type="text/javascript">
+		function addRow(argument) {
+			var form = document.getElementById("test");
+			var newName = document.getElementById("TName").value;
+			var gender = document.querySelector('input[name="gender"]:checked').value;  
+			var track = form.elements["Track"].value;
+			var tr = document.createElement('tr');
+        	var td = tr.appendChild(document.createElement('td'));
+        	td.innerHTML = newName;
+        	var td1 = tr.appendChild(document.createElement('td'));
+        	td1.innerHTML = gender;
+        	var td2 = tr.appendChild(document.createElement('td'));
+        	td2.innerHTML = track;
+        	document.getElementById("Ttable").appendChild(tr);
+		}
+		
+	</script>
+</fieldset>
+
+</body>
+</html>
